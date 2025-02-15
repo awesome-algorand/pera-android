@@ -197,6 +197,7 @@ android {
         viewBinding true
         buildConfig = true
         compose = true
+        dataBinding = true
     }
 
     packagingOptions {
@@ -293,6 +294,18 @@ dependencies {
     implementation libs.mpandroidchart
 
     coreLibraryDesugaring libs.desugar.jdk
+
+    // Cryptography
+    implementation files("libs/dP256.jar")
+
+    // Liquid Auth Canary
+    implementation libs.stream.webrtc.android
+    implementation libs.liquid.auth.android
+
+    // Credential Provider Demo
+    implementation libs.androidx.credentials
+    implementation libs.androidx.credentials.play.services.auth
+    implementation libs.androidx.room.common
 
     // Wallet Connect v1
     implementation libs.java.websocket

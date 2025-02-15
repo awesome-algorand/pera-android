@@ -81,6 +81,19 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.kotlinx.coroutines.android)
             implementation(libs.ktor.client.okhttp)
+
+            // Cryptography
+            implementation(files("libs/dP256.jar"))
+
+            // Liquid Auth Canary
+            implementation(libs.stream.webrtc.android)
+            implementation(libs.liquid.auth.android)
+
+            // Credential Provider Demo
+            implementation(libs.androidx.credentials)
+            implementation("androidx.credentials:credentials-play-services-auth")
+            implementation(libs.constraintlayout)
+            implementation(libs.androidx.room.common)
         }
 
         iosMain.dependencies {
@@ -125,6 +138,7 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
     }
     packaging {
         resources {
@@ -141,6 +155,9 @@ android {
             )
         }
     }
+}
+dependencies {
+    implementation(libs.androidx.room.ktx)
 }
 
 buildConfig {
